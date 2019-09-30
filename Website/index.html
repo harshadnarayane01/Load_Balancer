@@ -1,0 +1,240 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="./style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <title> Welcome to the application !!! </title>
+      <style>
+        body {
+
+        }
+      </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Application</a>
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
+    <div class="container-fluid">
+      <br>
+        <div class="row" >
+          <div class = "col-md-2"></div>
+          <div class = "col-md-4">
+            <div class = "col-md-4"><label for="inputOne">Enter Number : </div>
+            <div class="col-md-3"><input type="number" id="inputOne"></div>
+           </div>
+           <div class="col-md-1"></div>
+           <div class = "col-md-4">
+             <div class = "col-md-4"><label for="inputOneString">Enter String : </div>
+             <div class="col-md-3"><input type="text" id="inputOneString"></div>
+            </div>
+         </div>
+        <br>
+        <div class="row" >
+          <div class = "col-md-2"></div>
+          <div class = "col-md-4">
+            <div class = "col-md-4"><label for="inputTwo">Enter Number : </div>
+            <div class="col-md-3"><input type="number" id="inputTwo"></div>
+           </div>
+           <div class="col-md-1"></div>
+           <div class = "col-md-4">
+             <div class = "col-md-4"><label for="inputTwoString">Enter String : </div>
+             <div class="col-md-3"><input type="text" id="inputTwoString"></div>
+            </div>
+         </div>
+        <br>
+        <div class="row" >
+          <div class = "col-md-2"></div>
+          <div class = "col-md-4">
+            <div class = "col-md-4"><label for="resultNumbers">Result :</div>
+            <div class="col-md-3"><input type="text" id="resultNumbers"></div>
+           </div>
+           <div class="col-md-1"></div>
+           <div class = "col-md-4">
+             <div class = "col-md-4"><label for="resultStrings">Result : </div>
+             <div class="col-md-3"><input type="text" id="resultStrings"></div>
+            </div>
+         </div>
+         <br><br>
+        <div class="row">
+            <div class = "col-md-2"> </div>
+            <div class = "col-md-1">
+              <button type="button" id="addButton" value="arithmetic" style="width: 100%; height: 100%;" class="btn btn-success">Add</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button"  id="subtractButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success">Substract</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button" id="multiplyButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success">Multiply</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button" id="divideButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success" style="">Divide</button>
+            </div>
+            <div class="col-md-2"></div>
+            <div class = "col-md-2">
+              <button type="button" id="concatenateButton" value="stringManipulation" style="width: 100%; height: 100%;"class="btn btn-info" style="">Concatenate</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class = "col-md-2"> </div>
+            <div class = "col-md-1">
+              <button type="button"  id="sineButton" value="arithmetic" style="width: 100%; height: 100%;" class="btn btn-success">Sine</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button"  id="cosineButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success">Cosine</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button"  id="moduloButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success">Modulo</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button" id="tanButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success" style="">Tan</button>
+            </div>
+            <div class="col-md-2"></div>
+            <div class = "col-md-2">
+              <button type="button"  id="reverseButton" value="stringManipulation" style="width: 100%; height: 100%;"class="btn btn-info" style="">Reverse</button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class = "col-md-2"> </div>
+            <div class = "col-md-1">
+              <button type="button"  id="logButton" value="arithmetic" style="width: 100%; height: 100%;" class="btn btn-success">Log10</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button"  id="rootButton" value="arithmetic" style="width: 100%; height: 100%;"class="btn btn-success">Sq Root</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button" id="squareButton" value="arithmetic"  style="width: 100%; height: 100%;"class="btn btn-success">Sqaure</button>
+            </div>
+            <div class = "col-md-1">
+              <button type="button"  id="clearButton" style="width: 100%; height: 100%;"class="btn btn-success" style="">Clear</button>
+            </div>
+            <div class="col-md-2"></div>
+            <div class = "col-md-2">
+              <button type="button"  id="lengthButton" value="stringManipulation" style="width: 100%; height: 100%;"class="btn btn-info" style="">Length</button>
+            </div>
+        </div>
+
+  <script type="text/javascript">
+
+        document.getElementById("addButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("addButton").value;
+          performOperation( buttonValue , 'add' );
+        });
+        document.getElementById("subtractButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("subtractButton").value;
+          performOperation( buttonValue , 'subtract' );
+        });
+        document.getElementById("multiplyButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("multiplyButton").value;
+          performOperation( buttonValue , 'multiply' );
+        });
+        document.getElementById("divideButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("divideButton").value;
+          performOperation( buttonValue , 'divide' );
+        });
+        document.getElementById("concatenateButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("concatenateButton").value;
+          performOperation( buttonValue , 'concat' );
+        });
+        document.getElementById("sineButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("sineButton").value;
+          performOperation( buttonValue , 'sine' );
+        });
+        document.getElementById("cosineButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("cosineButton").value;
+          performOperation( buttonValue , 'cosine' );
+        });
+        document.getElementById("moduloButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("moduloButton").value;
+          performOperation( buttonValue , 'mod' );
+        });
+        document.getElementById("tanButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("tanButton").value;
+          performOperation( buttonValue , 'tan' );
+        });
+        document.getElementById("reverseButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("reverseButton").value;
+          performOperation( buttonValue , 'reverse' );
+        });
+        document.getElementById("logButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("logButton").value;
+          performOperation( buttonValue , 'log10' );
+        });
+        document.getElementById("rootButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("rootButton").value;
+          performOperation( buttonValue , 'root' );
+        });
+        document.getElementById("squareButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("squareButton").value;
+          performOperation( buttonValue , 'square' );
+        });
+        document.getElementById("clearButton").addEventListener("click",function() {
+          clearOperation();
+        });
+        document.getElementById("lengthButton").addEventListener("click",function() {
+          var buttonValue = document.getElementById("lengthButton").value;
+          performOperation( buttonValue , 'length' );
+        });
+
+        function performOperation( buttonValue , apiToBeCalled ) {
+          if ( buttonValue === 'arithmetic' ) { 
+            var number1 = document.getElementById("inputOne").value;
+            var number2 = document.getElementById("inputTwo").value;
+            var serverIP = loadBalancer( buttonValue );
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if ( this.status == 200 ) {
+                document.getElementById("resultNumbers").value = this.responseText;
+              }
+            }
+            xhttp.open("GET", serverIP + "/" + apiToBeCalled + "?number1=" + number1 + "&number2=" + number2, true);
+            xhttp.send();
+          }
+          else if ( buttonValue === 'stringManipulation' ){
+            var string1 = document.getElementById("inputOneString").value;
+            var string2 = document.getElementById("inputTwoString").value;
+            var serverIP = loadBalancer( buttonValue );
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if ( this.status == 200 ) {
+                document.getElementById("resultStrings").value = this.responseText;
+              }
+            }
+            xhttp.open("GET", serverIP + "/" + apiToBeCalled + "?inputOneString=" + string1 + "&inputTwoString=" + string2, true);
+            xhttp.send();
+          }
+        } string2
+        
+        function loadBalancer ( buttonValue ) {
+          var serverIP = 'localhost';
+          if ( buttonValue === 'arithmetic' ) {
+            serverIP = 'http://localhost:8080';
+          } 
+          else if ( buttonValue === 'stringManipulation' ){
+            serverIP = 'http://localhost:9090';
+          }
+          else {
+            serverIP = 'Button Value is wrong, please contact administrator';
+          }
+          return serverIP;
+        }
+        function clearOperation() {
+          document.getElementById("inputOne").value = "";
+          document.getElementById("inputTwo").value = "";
+          document.getElementById("resultNumbers").value = "";
+        }
+  </script>
+    </body>
+  </html>
