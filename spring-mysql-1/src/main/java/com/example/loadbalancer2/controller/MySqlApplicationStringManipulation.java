@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MySqlApplicationStringManipulation {
-	
+	// DB Parameters
 	public static String dbURL = "jdbc:mysql://localhost:3306/transactions";
 	public static String username = "root";
 	public static String password = "harshad";
@@ -24,6 +24,9 @@ public class MySqlApplicationStringManipulation {
 	String insertQuery = "insert into transaction_history( transaction_number,query,parameter1,parameter2,result,transactime)"
             + "values(?,?,?,?,?,?)";
 	Connection myConnection;
+	/**
+	 * This function will concatenate two strings.
+	 */
 	@RequestMapping(value="/concat")
 	public void concatService(HttpServletRequest req, HttpServletResponse res)  throws Exception  {
 		String stringOne =  req.getParameter("inputOneString");
@@ -38,7 +41,10 @@ public class MySqlApplicationStringManipulation {
 	    connectToDatabase();
 	    storeResult(result,"Concatenation",stringOne,stringTwo);
 	 }
-	
+	/**
+	 * 
+	 * This function will reverse a string.
+	 */
 	@RequestMapping(value="/reverse")
 	public void reverseService(HttpServletRequest req, HttpServletResponse res)  throws Exception  {
 		String stringOne =  req.getParameter("inputOneString");
@@ -55,7 +61,9 @@ public class MySqlApplicationStringManipulation {
 	    connectToDatabase();
 	    storeResult(result,"Reverse",stringOne,stringTwo);
 	 }
-	
+	/**
+	 * This function calculates length of the string. 
+	 */
 	@RequestMapping(value="/length")
 	public void lengthService(HttpServletRequest req, HttpServletResponse res)  throws Exception  {
 		String stringOne =  req.getParameter("inputOneString");
@@ -70,7 +78,13 @@ public class MySqlApplicationStringManipulation {
 	    connectToDatabase();
 	    storeResult(result,"Length",stringOne,stringTwo);
 	 }
-	
+	/**
+	 * Stores the computation result to the database.
+	 * @param result : Result of operation
+	 * @param queryAPI : Operation type
+	 * @param stringOne : First Input
+	 * @param stringTwo : Second Input 
+	 */
 	private void storeResult(String result, String queryAPI,String stringOne, String stringTwo) throws Exception {
 		PreparedStatement preparedStmt = myConnection.prepareStatement(insertQuery);
 		preparedStmt.setInt(1, lastIndexFOrTransaction + 1 );
@@ -81,7 +95,10 @@ public class MySqlApplicationStringManipulation {
 		preparedStmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
 		preparedStmt.executeUpdate();
 	}
-	
+	/**
+	 * Connect the application with database.
+	 * Returns the last value of primary key to maintain serial order of operation.
+	 */
 	private void connectToDatabase() {
 		try {
 			myConnection = DriverManager.getConnection(dbURL, username, password);

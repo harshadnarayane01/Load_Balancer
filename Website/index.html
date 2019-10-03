@@ -11,9 +11,6 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <title> Welcome to the application !!! </title>
       <style>
-        body {
-
-        }
       </style>
     </head>
     <body>
@@ -127,67 +124,88 @@
         </div>
 
   <script type="text/javascript">
-
+        // Event Listeners for Add button click event.
         document.getElementById("addButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("addButton").value;
           performOperation( buttonValue , 'add' );
         });
+        // Event Listener for Subtract button click event.
         document.getElementById("subtractButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("subtractButton").value;
           performOperation( buttonValue , 'subtract' );
         });
+        // Event Listener for Multiply button click event.
         document.getElementById("multiplyButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("multiplyButton").value;
           performOperation( buttonValue , 'multiply' );
         });
+        // Event Listener for Divide button click event.
         document.getElementById("divideButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("divideButton").value;
           performOperation( buttonValue , 'divide' );
         });
+        // Event Listener for Concatenate button click event.
         document.getElementById("concatenateButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("concatenateButton").value;
           performOperation( buttonValue , 'concat' );
         });
+        // Event Listener for Sine button click event.
         document.getElementById("sineButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("sineButton").value;
           performOperation( buttonValue , 'sine' );
         });
+        // Event Listener for Cosine button click event.
         document.getElementById("cosineButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("cosineButton").value;
           performOperation( buttonValue , 'cosine' );
         });
+        // Event Listener for Modulo button click event.
         document.getElementById("moduloButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("moduloButton").value;
           performOperation( buttonValue , 'mod' );
         });
+        // Event Listener for Tan button click event.
         document.getElementById("tanButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("tanButton").value;
           performOperation( buttonValue , 'tan' );
         });
+        // Event Listener for Reverse button click event.
         document.getElementById("reverseButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("reverseButton").value;
           performOperation( buttonValue , 'reverse' );
         });
+        // Event Listener for Log button click event.
         document.getElementById("logButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("logButton").value;
           performOperation( buttonValue , 'log10' );
         });
+        // Event Listener for Root button click event.
         document.getElementById("rootButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("rootButton").value;
           performOperation( buttonValue , 'root' );
         });
+        // Event Listener for Square button click event.
         document.getElementById("squareButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("squareButton").value;
           performOperation( buttonValue , 'square' );
         });
+        // Event Listener for Clear button click event.
         document.getElementById("clearButton").addEventListener("click",function() {
           clearOperation();
         });
+        // Event Listener for Length button click event.
         document.getElementById("lengthButton").addEventListener("click",function() {
           var buttonValue = document.getElementById("lengthButton").value;
           performOperation( buttonValue , 'length' );
         });
-
+        /*
+          * This function performs operation based upon the operator group.
+          * Viz. Arithmetic or String Manipulations.
+          * And call load balancer logic to distinguish service based upon operator selection.
+          * Params
+          * @buttonValue : arithmetic / stringManipulation.
+          * @apiToBeCalled : Service API based upon the clicked button value. 
+        */
         function performOperation( buttonValue , apiToBeCalled ) {
           if ( buttonValue === 'arithmetic' ) { 
             var number1 = document.getElementById("inputOne").value;
@@ -215,8 +233,13 @@
             xhttp.open("GET", serverIP + "/" + apiToBeCalled + "?inputOneString=" + string1 + "&inputTwoString=" + string2, true);
             xhttp.send();
           }
-        } string2
-        
+        }
+        /**
+        * Depending upon operator group value, this function will provide load balancing and
+        * will choose the appropriate server to send the requests.
+        * @params:
+        * buttonValue : arithmetic / stringManipulation.
+        */
         function loadBalancer ( buttonValue ) {
           var serverIP = 'localhost';
           if ( buttonValue === 'arithmetic' ) {
@@ -230,10 +253,16 @@
           }
           return serverIP;
         }
+        /**
+        * This function will clear the input and result text boxes.
+        */
         function clearOperation() {
           document.getElementById("inputOne").value = "";
           document.getElementById("inputTwo").value = "";
           document.getElementById("resultNumbers").value = "";
+          document.getElementById("inputOneString").value = "";
+          document.getElementById("inputTwoString").value = "";
+          document.getElementById("resultStrings").value = "";
         }
   </script>
     </body>
